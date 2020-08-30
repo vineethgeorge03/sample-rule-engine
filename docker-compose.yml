@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:11"
+    container_name: "my_postgres"
+    ports:
+      - "4432:5432"
+    volumes:
+      - /Users/vineeth/myProjects/posrgresDocker/my_dbdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  ruleengine:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    depends_on:
+      - "postgres"
+    ports:
+      - "8080:8080"

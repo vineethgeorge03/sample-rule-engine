@@ -14,8 +14,9 @@ public class SpringJdbcConfig {
     public DataSource postgresSqlDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/ruleengine");
+        dataSource.setUrl("jdbc:postgresql://my_postgres:5432/ruleengine");
         dataSource.setUsername("postgres");
+        dataSource.setPassword("postgres");
         return dataSource;
     }
 }
