@@ -1,3 +1,5 @@
+create database if not exists ruleengine;
+
 create table if not exists lpc_config (
 id serial,
 lpc varchar(255) primary key
